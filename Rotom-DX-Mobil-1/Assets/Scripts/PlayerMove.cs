@@ -7,7 +7,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float Force;
     [SerializeField] private int health;
-    [SerializeField] Rigidbody2D ballRB;
+    [SerializeField] Rigidbody2D ballRB;    
     private Rigidbody2D playerRB;
     
     void Start()
