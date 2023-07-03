@@ -9,7 +9,7 @@ public class EnemyScripts : MonoBehaviour
     private bool Special;
     public bool die;
     public int spacialNum;
-
+    private int prevNum;
     private UpgradeData _upgradeData;
     private void Awake()
     {
@@ -21,23 +21,38 @@ public class EnemyScripts : MonoBehaviour
         Special = _enemyData.special;
         die = false;
     }
- 
+
+    private void Update()
+    {
+       
+        if (health <= 0)
+        {
+            if (Special)
+            {
+             
+                if (prevNum == spacialNum)
+                {
+                    spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length);
+                    die = true;
+                }
+                else
+                {
+                    prevNum = spacialNum;
+                }
+               
+                Debug.Log(spacialNum);
+            }
+         
+            Destroy(gameObject);
+        }
+       
+    }
+   
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
             health--;
-            if (health <= 0)
-            {
-                if (Special)
-                {
-                    spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length);
-                    die = true;
-                }
-
-                Destroy(gameObject);
-
-            }
         }
     }
 }

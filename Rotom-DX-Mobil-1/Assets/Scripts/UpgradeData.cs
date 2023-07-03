@@ -20,22 +20,24 @@ public class UpgradeData : MonoBehaviour
 
     private void Update()
     {
-        if (_enemyScripts.die)
+        if (_enemyScripts.die == true)
         {
             for (int i = 0; i < _upgradeScripts.Length; i++)
             {
                 if (i == _enemyScripts.spacialNum)
                 {
-                    _upgradeScripts[i].SetActive(true);
-                    Debug.Log("Deðiþtim");
+                    _upgradeScripts[i].gameObject.SetActive(true);
+                    Debug.Log("Bu budur" + i);
                 }
                 else
                 {
-                    _upgradeScripts[i].SetActive(false);
-                    Debug.Log("Aynýyým");
+                    _upgradeScripts[i].gameObject.SetActive(false);
+                    Debug.Log("Hatalý");
+                 
                 }
             }
             _enemyScripts.die = false;
         }
+       
     }
 }
