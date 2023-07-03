@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float Force;
     [SerializeField] private int health;
+    [SerializeField] Rigidbody2D ballRB;
     private Rigidbody2D playerRB;
     
     void Start()
@@ -32,7 +33,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
-            collision.gameObject.GetComponent<Rigidbody2D>().velocity = new Vector2(0,Force);
+            ballRB.velocity = new Vector2(ballRB.velocity.x, Force);
         }
     }
 }
