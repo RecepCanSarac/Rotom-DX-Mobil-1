@@ -7,7 +7,7 @@ public class EnemyScripts : MonoBehaviour
     [SerializeField] EnemyData _enemyData;
     private int health;
     private bool Special;
-
+    public bool die;
     public int spacialNum;
 
     private UpgradeData _upgradeData;
@@ -19,26 +19,25 @@ public class EnemyScripts : MonoBehaviour
     {
         health = _enemyData.Health;
         Special = _enemyData.special;
+        die = false;
     }
-    void Update()
-    {
-        if (health <= 0)
-        {
-            if (Special)
-            {
-                spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length);
-            }
-            Destroy(gameObject);
-        }
-
-    }
-
-
+ 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
             health--;
+            if (health <= 0)
+            {
+                if (Special)
+                {
+                    spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length);
+                    die = true;
+                }
+
+                Destroy(gameObject);
+
+            }
         }
     }
 }
