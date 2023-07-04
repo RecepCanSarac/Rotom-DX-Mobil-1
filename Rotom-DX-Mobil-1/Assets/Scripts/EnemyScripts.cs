@@ -34,7 +34,8 @@ public class EnemyScripts : MonoBehaviour
                 if (prevNum == spacialNum)
                 {
                     spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length);
-                    _upgradeData.ActiveUpgrade(spacialNum);
+                    Instantiate(_upgradeData._upgradeScripts[spacialNum],transform.position,Quaternion.identity);
+                    
                 }
                 else
                 {
