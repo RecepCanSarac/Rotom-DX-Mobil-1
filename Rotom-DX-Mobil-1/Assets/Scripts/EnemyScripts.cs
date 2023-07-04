@@ -19,21 +19,22 @@ public class EnemyScripts : MonoBehaviour
     {
         health = _enemyData.Health;
         Special = _enemyData.special;
+       
         die = false;
     }
 
     private void Update()
     {
-       
+        die = true;
         if (health <= 0)
         {
             if (Special)
             {
-             
+               
                 if (prevNum == spacialNum)
                 {
                     spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length);
-                    die = true;
+                    _upgradeData.ActiveUpgrade(spacialNum);
                 }
                 else
                 {

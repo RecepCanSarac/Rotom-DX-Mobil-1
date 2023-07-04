@@ -12,32 +12,31 @@ public class UpgradeData : MonoBehaviour
     [SerializeField] public GameObject[] _upgradeScripts;
 
     private EnemyScripts _enemyScripts;
+    
+    private SpriteRenderer _spriteRenderer;
 
     private void Start()
     {
         _enemyScripts = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyScripts>();
+       _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
-    private void Update()
+    public void ActiveUpgrade(int specialNum)
     {
-        if (_enemyScripts.die == true)
+        for (int i = 0; i < _upgradeScripts.Length; i++)
         {
-            for (int i = 0; i < _upgradeScripts.Length; i++)
+            if (specialNum == i)
             {
-                if (i == _enemyScripts.spacialNum)
-                {
-                    _upgradeScripts[i].gameObject.SetActive(true);
-                    Debug.Log("Bu budur" + i);
-                }
-                else
-                {
-                    _upgradeScripts[i].gameObject.SetActive(false);
-                    Debug.Log("Hatalý");
-                 
-                }
+                //_upgradeScripts[i].SetActive(true);
+                _spriteRenderer.sprite = _sprite[i];    
+                Debug.Log("Active");
             }
-            _enemyScripts.die = false;
+            else
+            {
+                
+                //_upgradeScripts[i].SetActive(false);
+                Debug.Log("Deactive");
+            }
         }
-       
     }
 }
