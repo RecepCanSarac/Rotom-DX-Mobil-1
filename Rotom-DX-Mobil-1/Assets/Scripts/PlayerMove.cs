@@ -36,5 +36,18 @@ public class PlayerMove : MonoBehaviour
         {
             ballRB.velocity = new Vector2(ballRB.velocity.x, Force);
         }
+
+      
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Upgrade"))
+        {
+            IController PlayerUpgrade = collision.gameObject.GetComponent<IController>();
+            if (PlayerUpgrade != null)
+            {
+                PlayerUpgrade.PlayerUpgrade();
+            }
+        }
     }
 }

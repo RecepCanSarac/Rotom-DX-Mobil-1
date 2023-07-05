@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Ball_2X : MonoBehaviour
+public class Ball_2X : MonoBehaviour,IController
 {
     private Transform ball;
     private GameObject ballPrefab;
@@ -16,14 +16,15 @@ public class Ball_2X : MonoBehaviour
         _enemyScripts = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyScripts>();
 
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void Ball2X()
     {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            _upgradeData.ActiveUpgrade(_enemyScripts.spacialNum);
-            Instantiate(ballPrefab, ball.position, Quaternion.identity);
-            Destroy(gameObject);
-        }
+        _upgradeData.ActiveUpgrade(_enemyScripts.spacialNum);
+        Instantiate(ballPrefab, ball.position, Quaternion.identity);
+       
+    }
+
+    public void PlayerUpgrade()
+    {
+        Ball2X();
     }
 }
