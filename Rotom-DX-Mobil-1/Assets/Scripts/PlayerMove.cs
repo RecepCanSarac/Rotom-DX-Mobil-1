@@ -15,6 +15,11 @@ public class PlayerMove : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         ballRB = GameObject.FindGameObjectWithTag("Ball").GetComponent<Rigidbody2D>();
     }
+
+    void Update()
+    {
+
+    }
     private void FixedUpdate()
     {
         float horizontalMove = Input.GetAxisRaw("Horizontal");
@@ -31,15 +36,23 @@ public class PlayerMove : MonoBehaviour
         {
             ballRB.velocity = new Vector2(ballRB.velocity.x, Force);
         }
+
+      
     }
-   
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Upgrade"))
+        {
+            IController PlayerUpgrade = collision.gameObject.GetComponent<IController>();
+            if (PlayerUpgrade != null)
+            {
+                PlayerUpgrade.PlayerUpgrade();
+            }
+        }
+    }
 
     public void UpgradeButton()
     {
-        IController PlayerUpgrade = GameObject.FindGameObjectWithTag("Upgrade").GetComponent<IController>();
-        if (PlayerUpgrade != null)
-        {
-            PlayerUpgrade.PlayerUpgrade();
-        }
+
     }
 }
