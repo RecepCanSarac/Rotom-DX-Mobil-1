@@ -19,13 +19,10 @@ public class EnemyScripts : MonoBehaviour
     {
         health = _enemyData.Health;
         Special = _enemyData.special;
-
-        die = false;
     }
 
     private void Update()
     {
-        die = true;
         if (health <= 0)
         {
             if (Special)
@@ -33,7 +30,7 @@ public class EnemyScripts : MonoBehaviour
 
                 if (prevNum == spacialNum)
                 {
-                    spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length);
+                    spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length + 1);
                     Instantiate(_upgradeData._upgradeScripts[spacialNum], transform.position, Quaternion.identity);
                 }
                 else

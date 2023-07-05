@@ -23,7 +23,7 @@ public class UpgradeData : MonoBehaviour
 
     public void ActiveUpgrade(int specialNum)
     {
-        for (int i = 0; i < _upgradeScripts.Length; i++)
+        for (int i = 0; i < _sprite.Length; i++)
         {
             if (specialNum == i)
             {

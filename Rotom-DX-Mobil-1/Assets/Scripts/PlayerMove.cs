@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float Force;
-    [SerializeField] private int health;
+    public int health;
     private Rigidbody2D ballRB;    
     private Rigidbody2D playerRB;
     
@@ -14,11 +14,6 @@ public class PlayerMove : MonoBehaviour
     {
         playerRB = GetComponent<Rigidbody2D>();
         ballRB = GameObject.FindGameObjectWithTag("Ball").GetComponent<Rigidbody2D>();
-    }
-
-    void Update()
-    {
-
     }
     private void FixedUpdate()
     {
@@ -36,18 +31,15 @@ public class PlayerMove : MonoBehaviour
         {
             ballRB.velocity = new Vector2(ballRB.velocity.x, Force);
         }
-
-      
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+   
+
+    public void UpgradeButton()
     {
-        if (collision.gameObject.CompareTag("Upgrade"))
+        IController PlayerUpgrade = GameObject.FindGameObjectWithTag("Upgrade").GetComponent<IController>();
+        if (PlayerUpgrade != null)
         {
-            IController PlayerUpgrade = collision.gameObject.GetComponent<IController>();
-            if (PlayerUpgrade != null)
-            {
-                PlayerUpgrade.PlayerUpgrade();
-            }
+            PlayerUpgrade.PlayerUpgrade();
         }
     }
 }
