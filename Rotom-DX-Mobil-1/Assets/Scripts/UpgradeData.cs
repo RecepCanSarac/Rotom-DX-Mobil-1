@@ -27,7 +27,6 @@ public class UpgradeData : MonoBehaviour
         {
             if (specialNum == i)
             {
-                
                 _spriteRenderer.sprite = _sprite[i];    
                 Debug.Log("Active");
             }

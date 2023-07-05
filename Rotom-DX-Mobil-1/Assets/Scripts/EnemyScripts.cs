@@ -19,7 +19,7 @@ public class EnemyScripts : MonoBehaviour
     {
         health = _enemyData.Health;
         Special = _enemyData.special;
-       
+
         die = false;
     }
 
@@ -30,26 +30,25 @@ public class EnemyScripts : MonoBehaviour
         {
             if (Special)
             {
-               
+
                 if (prevNum == spacialNum)
                 {
                     spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length);
-                    Instantiate(_upgradeData._upgradeScripts[spacialNum],transform.position,Quaternion.identity);
-                    
+                    Instantiate(_upgradeData._upgradeScripts[spacialNum], transform.position, Quaternion.identity);
                 }
                 else
                 {
                     prevNum = spacialNum;
                 }
-               
+
                 Debug.Log(spacialNum);
             }
-         
+
             Destroy(gameObject);
         }
-       
+
     }
-   
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
