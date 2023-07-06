@@ -26,6 +26,7 @@ public class EnemyScripts : MonoBehaviour
     {
         if (health <= 0)
         {
+            OnDusmanOlum();
             if (Special)
             {
                 if (prevNum == spacialNum)
@@ -50,4 +51,14 @@ public class EnemyScripts : MonoBehaviour
             health--;
         }
     }
+    private void OnDusmanOlum()
+    {
+        EnemyDedector dusmanTespiti = FindObjectOfType<EnemyDedector>();
+        if (dusmanTespiti != null && dusmanTespiti.dusmanlar.Contains(gameObject))
+        {
+            dusmanTespiti.DusmanOldu(gameObject);
+        }
+        Destroy(gameObject);
+    }
+
 }
