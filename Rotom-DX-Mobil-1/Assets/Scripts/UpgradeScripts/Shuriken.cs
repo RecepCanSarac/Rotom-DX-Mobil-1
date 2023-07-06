@@ -25,6 +25,7 @@ public class Shuriken : MonoBehaviour,IController
     private void BugGenerator()
     {
         _upgradeData.ActiveUpgrade(_enemyScript.spacialNum);
+        _playerMove.speed = 425;
         Instantiate(bugPrefab,spawnBugPos.position,Quaternion.identity);
     }
 }
