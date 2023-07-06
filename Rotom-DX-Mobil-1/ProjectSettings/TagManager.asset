@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Upgrade
   - SpawnPoint
+  - Detected
   layers:
   - Default
   - TransparentFX

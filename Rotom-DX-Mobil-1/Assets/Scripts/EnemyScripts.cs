@@ -26,7 +26,7 @@ public class EnemyScripts : MonoBehaviour
     {
         if (health <= 0)
         {
-            OnDusmanOlum();
+          
             if (Special)
             {
                 if (prevNum == spacialNum)
@@ -41,6 +41,7 @@ public class EnemyScripts : MonoBehaviour
                 }
                 Debug.Log(spacialNum);
             }
+            OnDusmanOlum();
             Destroy(gameObject);
         }
     }
