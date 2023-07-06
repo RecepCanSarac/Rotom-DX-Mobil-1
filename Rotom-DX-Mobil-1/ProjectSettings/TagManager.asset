@@ -7,6 +7,7 @@ TagManager:
   - Ball
   - Enemy
   - Upgrade
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

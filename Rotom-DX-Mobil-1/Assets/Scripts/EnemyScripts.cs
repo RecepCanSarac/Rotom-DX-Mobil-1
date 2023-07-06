@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyScripts : MonoBehaviour
 {
     [SerializeField] EnemyData _enemyData;
-    private int health;
+    public int health;
     private bool Special;
     public bool die;
     public int spacialNum;
@@ -30,7 +30,7 @@ public class EnemyScripts : MonoBehaviour
 
                 if (prevNum == spacialNum)
                 {
-                    spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length + 1);
+                    spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length);
                     Instantiate(_upgradeData._upgradeScripts[spacialNum], transform.position, Quaternion.identity);
                 }
                 else
