@@ -414,17 +414,17 @@ MonoBehaviour:
   _upgradeScripts:
   - {fileID: 3181577320325371798, guid: 6757df8988db4cb40959ffe7b510fa54, type: 3}
   - {fileID: 4362731919015024213, guid: 9f1480c19e5662d4f87eba4bf9147176, type: 3}
-  - {fileID: 4362731919015024213, guid: 9f1480c19e5662d4f87eba4bf9147176, type: 3}
-  - {fileID: 4362731919015024213, guid: 9f1480c19e5662d4f87eba4bf9147176, type: 3}
+  - {fileID: 5754548438305810698, guid: b5ab93c63d8ecda4fa95a92326ebeccf, type: 3}
+  - {fileID: 5754548438305810698, guid: b5ab93c63d8ecda4fa95a92326ebeccf, type: 3}
   - {fileID: 1950755752049256930, guid: 6906ed20c3209774fa996f76f93b2f6b, type: 3}
   - {fileID: 1950755752049256930, guid: 6906ed20c3209774fa996f76f93b2f6b, type: 3}
   - {fileID: 4362731919015024213, guid: 9f1480c19e5662d4f87eba4bf9147176, type: 3}
   - {fileID: 1950755752049256930, guid: 6906ed20c3209774fa996f76f93b2f6b, type: 3}
-  - {fileID: 1950755752049256930, guid: 6906ed20c3209774fa996f76f93b2f6b, type: 3}
-  - {fileID: 8674428645634007123, guid: 8f47c38d81f2cba4286545a3885d5e3f, type: 3}
+  - {fileID: 5754548438305810698, guid: b5ab93c63d8ecda4fa95a92326ebeccf, type: 3}
+  - {fileID: 5754548438305810698, guid: b5ab93c63d8ecda4fa95a92326ebeccf, type: 3}
   - {fileID: 4362731919015024213, guid: 9f1480c19e5662d4f87eba4bf9147176, type: 3}
   - {fileID: 4362731919015024213, guid: 9f1480c19e5662d4f87eba4bf9147176, type: 3}
-  - {fileID: 8674428645634007123, guid: 8f47c38d81f2cba4286545a3885d5e3f, type: 3}
+  - {fileID: 5754548438305810698, guid: b5ab93c63d8ecda4fa95a92326ebeccf, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -667,7 +667,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2001019942454140902, guid: 47291f0c74b4a08479fe72d3f24899aa, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.7022817
+      value: 3.48
       objectReference: {fileID: 0}
     - target: {fileID: 2001019942454140902, guid: 47291f0c74b4a08479fe72d3f24899aa, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1415,6 +1415,10 @@ PrefabInstance:
     - target: {fileID: 4537289229971410816, guid: 83b179d44c90511429a79f818786d3e9, type: 3}
       propertyPath: m_Name
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 4537289229971410818, guid: 83b179d44c90511429a79f818786d3e9, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4537289229971410828, guid: 83b179d44c90511429a79f818786d3e9, type: 3}
       propertyPath: m_RootOrder
