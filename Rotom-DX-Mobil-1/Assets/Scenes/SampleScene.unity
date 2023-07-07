@@ -416,13 +416,13 @@ MonoBehaviour:
   - {fileID: 4362731919015024213, guid: 9f1480c19e5662d4f87eba4bf9147176, type: 3}
   - {fileID: 6349007073287931763, guid: bfd2aefafd6215f4e9f0b540ad917360, type: 3}
   - {fileID: 5754548438305810698, guid: b5ab93c63d8ecda4fa95a92326ebeccf, type: 3}
-  - {fileID: 1950755752049256930, guid: 6906ed20c3209774fa996f76f93b2f6b, type: 3}
+  - {fileID: 6461022840127247252, guid: 3ad5405b6377626449be4acfde4ba155, type: 3}
   - {fileID: 6982464948600167747, guid: fe8cd09d2d440c642b29c6cee75e6039, type: 3}
   - {fileID: 4362731919015024213, guid: 9f1480c19e5662d4f87eba4bf9147176, type: 3}
   - {fileID: 6349007073287931763, guid: bfd2aefafd6215f4e9f0b540ad917360, type: 3}
   - {fileID: 7652176775186273812, guid: d01e20959d8e2e84cbbe4a4cdacc0bc0, type: 3}
   - {fileID: 6982464948600167747, guid: fe8cd09d2d440c642b29c6cee75e6039, type: 3}
-  - {fileID: 4362731919015024213, guid: 9f1480c19e5662d4f87eba4bf9147176, type: 3}
+  - {fileID: 6461022840127247252, guid: 3ad5405b6377626449be4acfde4ba155, type: 3}
   - {fileID: 7652176775186273812, guid: d01e20959d8e2e84cbbe4a4cdacc0bc0, type: 3}
   - {fileID: 5754548438305810698, guid: b5ab93c63d8ecda4fa95a92326ebeccf, type: 3}
 --- !u!1001 &516434373
@@ -1514,6 +1514,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1087017566168349551, guid: 83b179d44c90511429a79f818786d3e9, type: 3}
+      propertyPath: maxGuc
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 2698961324125917048, guid: 83b179d44c90511429a79f818786d3e9, type: 3}
       propertyPath: m_Transition
       value: 0

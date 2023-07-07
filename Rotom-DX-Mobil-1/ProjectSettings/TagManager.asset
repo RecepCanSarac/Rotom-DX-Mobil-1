@@ -10,6 +10,7 @@ TagManager:
   - SpawnPoint
   - Detected
   - Tranbolin
+  - Obstacle
   layers:
   - Default
   - TransparentFX
