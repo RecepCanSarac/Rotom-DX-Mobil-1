@@ -1514,6 +1514,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2698961324125917048, guid: 83b179d44c90511429a79f818786d3e9, type: 3}
+      propertyPath: m_Transition
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4028084340270569228, guid: 83b179d44c90511429a79f818786d3e9, type: 3}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4537289229971410816, guid: 83b179d44c90511429a79f818786d3e9, type: 3}
       propertyPath: m_Name
       value: Ball
