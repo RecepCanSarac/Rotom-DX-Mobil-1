@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EnemyDedector : MonoBehaviour
 {
-    public List<GameObject> dusmanlar; // Düþmanlarý tutacak liste
+    public List<GameObject> dusmanlar;
 
     private void Start()
     {

@@ -33,7 +33,7 @@ public class EnemyScripts : MonoBehaviour
                 {
                     spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length);
                     Instantiate(_upgradeData._upgradeScripts[spacialNum], transform.position, Quaternion.identity);
-                    _playerMove.speed = 325f;
+                  
                 }
                 else
                 {

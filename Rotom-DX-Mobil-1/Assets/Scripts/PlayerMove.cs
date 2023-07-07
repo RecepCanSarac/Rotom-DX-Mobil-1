@@ -9,11 +9,13 @@ public class PlayerMove : MonoBehaviour
     public int health;
     private Rigidbody2D ballRB;    
     private Rigidbody2D playerRB;
+    private BoxCollider2D collider;
     
     void Start()
     {
         playerRB = GetComponent<Rigidbody2D>();
         ballRB = GameObject.FindGameObjectWithTag("Ball").GetComponent<Rigidbody2D>();
+        collider = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -46,6 +48,8 @@ public class PlayerMove : MonoBehaviour
             IController PlayerUpgrade = collision.gameObject.GetComponent<IController>();
             if (PlayerUpgrade != null)
             {
+                speed = 325;
+                collider.isTrigger = false;
                 PlayerUpgrade.PlayerUpgrade();
             }
         }
