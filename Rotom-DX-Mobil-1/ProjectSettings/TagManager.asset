@@ -9,6 +9,7 @@ TagManager:
   - Upgrade
   - SpawnPoint
   - Detected
+  - Tranbolin
   layers:
   - Default
   - TransparentFX

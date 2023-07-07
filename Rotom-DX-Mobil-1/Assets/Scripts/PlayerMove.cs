@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D ballRB;    
     private Rigidbody2D playerRB;
     private BoxCollider2D collider;
+    private GameObject _tranbolin;
     
     void Start()
     {
@@ -50,6 +51,11 @@ public class PlayerMove : MonoBehaviour
             {
                 speed = 325;
                 collider.isTrigger = false;
+                _tranbolin = GameObject.FindGameObjectWithTag("Tranbolin");
+                if (_tranbolin != null)
+                {
+                    Destroy(_tranbolin);
+                }
                 PlayerUpgrade.PlayerUpgrade();
             }
         }
