@@ -51,6 +51,7 @@ public class PlayerMove : MonoBehaviour
             {
                 speed = 325;
                 collider.isTrigger = false;
+                Time.timeScale = 1.0f;
                 _tranbolin = GameObject.FindGameObjectWithTag("Tranbolin");
                 if (_tranbolin != null)
                 {
