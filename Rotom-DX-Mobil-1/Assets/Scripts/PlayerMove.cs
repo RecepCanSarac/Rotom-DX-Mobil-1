@@ -18,11 +18,6 @@ public class PlayerMove : MonoBehaviour
         ballRB = GameObject.FindGameObjectWithTag("Ball").GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
     }
-
-    void Update()
-    {
-
-    }
     private void FixedUpdate()
     {
         float horizontalMove = Input.GetAxisRaw("Horizontal");
