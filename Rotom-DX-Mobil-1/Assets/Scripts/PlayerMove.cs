@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
     private Rigidbody2D ballRB;    
     private Rigidbody2D playerRB;
     private BoxCollider2D collider;
+    private CircleCollider2D colliderBall;
     private GameObject _tranbolin;
     
     void Start()
@@ -17,6 +18,7 @@ public class PlayerMove : MonoBehaviour
         playerRB = GetComponent<Rigidbody2D>();
         ballRB = GameObject.FindGameObjectWithTag("Ball").GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
+        colliderBall = GameObject.FindGameObjectWithTag("Ball").GetComponent<CircleCollider2D>();
     }
     private void FixedUpdate()
     {
@@ -46,6 +48,7 @@ public class PlayerMove : MonoBehaviour
             {
                 speed = 325;
                 collider.isTrigger = false;
+                colliderBall.isTrigger = false;
                 Time.timeScale = 1.0f;
                 _tranbolin = GameObject.FindGameObjectWithTag("Tranbolin");
                 if (_tranbolin != null)

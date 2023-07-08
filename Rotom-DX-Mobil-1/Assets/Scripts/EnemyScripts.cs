@@ -52,6 +52,14 @@ public class EnemyScripts : MonoBehaviour
             health--;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ball"))
+        {
+            health--;
+        }
+    }
     private void OnDusmanOlum()
     {
         EnemyDedector dusmanTespiti = FindObjectOfType<EnemyDedector>();
