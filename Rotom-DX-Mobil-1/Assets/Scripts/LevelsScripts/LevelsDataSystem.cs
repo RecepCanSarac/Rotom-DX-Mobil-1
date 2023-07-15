@@ -2,31 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LevelsDataSystem : MonoBehaviour
 {
-    public static int levelSceneNum;
-    public int bigLevelDatanum;
+    public Button[] levels;
+    public int changeNum;
+    public int _indexBuildScene;
     void Start()
     {
-        bigLevelDatanum = PlayerPrefs.GetInt(nameof(bigLevelDatanum));
+        changeNum = 1;
+        foreach (var level in levels)
+        {
+            level.interactable = false;
+        }
     }
-
-
     void Update()
     {
-        levelSceneNum = SceneManager.GetActiveScene().buildIndex;
-        bigLevelDatanum = levelSceneNum;
-        PlayerPrefs.SetInt(nameof(bigLevelDatanum), bigLevelDatanum);
-        if (levelSceneNum > bigLevelDatanum)
+        if (changeNum == _indexBuildScene)
         {
-            bigLevelDatanum = levelSceneNum;
+            for (int i = 0; i < changeNum; i++)
+            {
+                levels[changeNum].interactable = true;
+            }
+           
         }
-        else if (levelSceneNum < bigLevelDatanum)
-        {
-            return ;
-        }
-        Debug.Log("BüyükLevel" + bigLevelDatanum);
-        Debug.Log("Þuanki Level" + levelSceneNum);
     }
 }

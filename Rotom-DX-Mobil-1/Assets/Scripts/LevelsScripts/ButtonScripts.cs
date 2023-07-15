@@ -10,4 +10,9 @@ public class ButtonScripts : MonoBehaviour
     {
         SceneManager.LoadScene("LevelScene");
     }
+
+    public void NextLevel(int number)
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + number);
+    }
 }
