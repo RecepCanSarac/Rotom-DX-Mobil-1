@@ -26,11 +26,6 @@ public class ButtonController : MonoBehaviour
             buttonText.text = (buttonValue - 1).ToString();
             buttonLockObject.SetActive(false);
         }
-        else
-        {
-            buttonText.text = "";
-            buttonLockObject.SetActive(true);
-        }
     }
 
     public void LoadSelectedScene()
