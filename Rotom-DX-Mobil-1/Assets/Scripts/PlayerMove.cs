@@ -20,14 +20,21 @@ public class PlayerMove : MonoBehaviour
         collider = GetComponent<BoxCollider2D>();
         colliderBall = GameObject.FindGameObjectWithTag("Ball").GetComponent<CircleCollider2D>();
     }
-    private void FixedUpdate()
-    {
-        float horizontalMove = Input.GetAxisRaw("Horizontal");
 
-        playerRB.velocity = new Vector2 (horizontalMove * speed * Time.deltaTime, playerRB.velocity.y);
+    public void leftMove()
+    {
+
+        playerRB.velocity = new Vector2(-speed * Time.deltaTime, playerRB.velocity.y);
 
         float xPos = Mathf.Clamp(transform.position.x, -3f, 3f);
-        transform.position = new Vector2(xPos,transform.position.y);
+        transform.position = new Vector2(xPos, transform.position.y);
+    }
+    public void rightMove()
+    {
+        playerRB.velocity = new Vector2(speed * Time.deltaTime, playerRB.velocity.y);
+
+        float xPos = Mathf.Clamp(transform.position.x, -3f, 3f);
+        transform.position = new Vector2(xPos, transform.position.y);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
