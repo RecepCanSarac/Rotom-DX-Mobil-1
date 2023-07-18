@@ -7,6 +7,7 @@ public class PauseScriptManager : MonoBehaviour
 {
     [SerializeField] private GameObject pausePanel;
 
+
     public void PausePanelActive()
     {
         pausePanel.SetActive(true);
@@ -20,10 +21,13 @@ public class PauseScriptManager : MonoBehaviour
 
     public void MainMenu()
     {
+       
         SceneManager.LoadScene(0);
     }
     public void LevelsMenu()
     {
+        
         SceneManager.LoadScene(1);
+        
     }
 }

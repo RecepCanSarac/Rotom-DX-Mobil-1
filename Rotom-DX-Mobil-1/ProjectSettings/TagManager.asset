@@ -11,6 +11,7 @@ TagManager:
   - Detected
   - Tranbolin
   - Obstacle
+  - LevelManager
   layers:
   - Default
   - TransparentFX
