@@ -24,6 +24,7 @@ public class EnemyDedector : MonoBehaviour
         if (dusmanlar.Count == 0)
         {
             nextLevelPanel.SetActive(true);
+            Debug.Log("NextLevelPnael");
         }
     }
     public void DusmanOldu(GameObject dusman)
