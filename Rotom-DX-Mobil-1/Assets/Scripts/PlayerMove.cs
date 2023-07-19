@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -12,15 +14,30 @@ public class PlayerMove : MonoBehaviour
     private BoxCollider2D collider;
     private CircleCollider2D colliderBall;
     private GameObject _tranbolin;
-    
+    [SerializeField] private TextMeshProUGUI HealthText;
+    [SerializeField] private GameObject TryAgainPanel;
     void Start()
     {
+        health = 3;
         playerRB = GetComponent<Rigidbody2D>();
         ballRB = GameObject.FindGameObjectWithTag("Ball").GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
         colliderBall = GameObject.FindGameObjectWithTag("Ball").GetComponent<CircleCollider2D>();
+        Time.timeScale = 1.00f;
     }
-
+    private void Update()
+    {
+        if (health <=0)
+        {
+            TryAgainPanel.SetActive(true);
+            Time.timeScale = 0.00f; 
+        }
+        else
+        {
+            TryAgainPanel.SetActive(false);
+            Time.timeScale = 1.00f;
+        }
+    }
     public void leftMove()
     {
 
@@ -41,6 +58,8 @@ public class PlayerMove : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ball"))
         {
+            health--;
+            HealthText.text ="Healt:"+health.ToString();
             ballRB.velocity = new Vector2(ballRB.velocity.x, Force);
         }
 
@@ -67,8 +86,12 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    public void UpgradeButton()
+    public void LevelScene()
     {
-
+        SceneManager.LoadScene(1);
+    }
+    public void TryScene()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
