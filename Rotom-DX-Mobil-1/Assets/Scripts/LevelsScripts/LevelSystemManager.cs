@@ -26,12 +26,15 @@ public class LevelSystemManager : MonoBehaviour
         SaveDataManager.Instance.StartFNC();
     }
 
+   
+
     public void ComplateLevel()
     {
         if(levelData.lastUnlockedLevel < (levelIndex + 3))
         {
             levelData.lastUnlockedLevel = levelIndex + 1;
             levelData.levelItemArray[levelData.lastUnlockedLevel].isItUnlocked = true;
+            SaveDataManager.Instance.DataSaveFNC();
         }  
     }
 }

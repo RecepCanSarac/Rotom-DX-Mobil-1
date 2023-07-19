@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using System.IO;
 
 public class SaveDataManager : MonoBehaviour
 {
@@ -22,21 +23,21 @@ public class SaveDataManager : MonoBehaviour
 
     public void StartFNC()
     {
-        int oyunIlkAcildi = PlayerPrefs.GetInt("oyunIlkAcildi", 0);
+        int oyunIlkAcildi = PlayerPrefs.GetInt("oyunIlkAcildi", 1);
 
-        if (oyunIlkAcildi == 2)
+        if (oyunIlkAcildi == 4)
         {
             DataLoadFNC();
         }
         else
         {
             DataSaveFNC();
-            PlayerPrefs.SetInt("oyunIlkAcildi", 2);
+            PlayerPrefs.SetInt("oyunIlkAcildi", 4);
         }
     }
+
+
     
-
-
     public void DataSaveFNC()
     {
         string levelDataString = JsonUtility.ToJson(LevelSystemManager.instance.levelData);
@@ -69,6 +70,27 @@ public class SaveDataManager : MonoBehaviour
         catch (System.Exception e)
         {
             print("Yüklemede hata oluþtu" + e);
+            throw;
+        }
+    }
+    public void DeleteData()
+    {
+        try
+        {
+            string filePath = Application.persistentDataPath + "/LevelData.json";
+            if (File.Exists(filePath))
+            {
+                File.Delete(filePath);
+                print("Veriler silindi.");
+            }
+            else
+            {
+                print("Silinecek veri dosyasý bulunamadý.");
+            }
+        }
+        catch (System.Exception e)
+        {
+            print("Silme iþlemi sýrasýnda hata oluþtu: " + e);
             throw;
         }
     }

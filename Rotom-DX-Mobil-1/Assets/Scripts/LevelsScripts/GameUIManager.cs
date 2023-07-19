@@ -15,7 +15,6 @@ public class GameUIManager : MonoBehaviour
     {
         levelText.text = "Level" + (LevelSystemManager.instance.levelIndex + 1) + "Tamamlandý";
         LevelSystemManager.instance.ComplateLevel();
-        SaveDataManager.Instance.DataSaveFNC();
         SceneManager.LoadScene(1);
     }
 
