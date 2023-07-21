@@ -9,6 +9,7 @@ public class PlayerMove : MonoBehaviour
     public float speed;
     [SerializeField] private float Force;
     public int health;
+    public int prevNum;
     private Rigidbody2D ballRB;    
     private Rigidbody2D playerRB;
     private BoxCollider2D collider;
@@ -29,6 +30,7 @@ public class PlayerMove : MonoBehaviour
     }
     void Start()
     {
+       
         playerSprite = GetComponent<SpriteRenderer>();
         _enemyScripts = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyScripts>();
         _playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
@@ -41,6 +43,7 @@ public class PlayerMove : MonoBehaviour
     }
     private void Update()
     {
+        HealthText.text = "Healt:" + health.ToString();
         if (health <=0)
         {
             TryAgainPanel.SetActive(true);

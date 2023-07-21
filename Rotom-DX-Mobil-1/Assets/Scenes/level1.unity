@@ -713,6 +713,7 @@ MonoBehaviour:
   speed: 500
   Force: 14
   health: 5
+  prevNum: 0
   HealthText: {fileID: 909658131}
   TryAgainPanel: {fileID: 41688599}
   playerDatas:
@@ -3819,7 +3820,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4028084340270569228, guid: 83b179d44c90511429a79f818786d3e9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -4.573
+      value: -4.632
       objectReference: {fileID: 0}
     - target: {fileID: 4537289229971410816, guid: 83b179d44c90511429a79f818786d3e9, type: 3}
       propertyPath: m_Name

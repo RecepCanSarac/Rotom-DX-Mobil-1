@@ -9,7 +9,7 @@ public class EnemyScripts : MonoBehaviour
     private bool Special;
     public bool die;
     public int spacialNum;
-    private int prevNum;
+
     private UpgradeData _upgradeData;
     private PlayerMove _playerMove;
     private PlayerManager _playerManager;
@@ -31,7 +31,7 @@ public class EnemyScripts : MonoBehaviour
           
             if (Special)
             {
-                if (prevNum == spacialNum)
+                if (_playerMove.prevNum == spacialNum)
                 {
                     spacialNum = Random.Range(0, _playerMove.playerDatas.Length);
                     Instantiate(_playerMove.playerDatas[spacialNum].Upgardes, transform.position, Quaternion.identity);
@@ -39,7 +39,7 @@ public class EnemyScripts : MonoBehaviour
                 }
                 else
                 {
-                    prevNum = spacialNum;
+                    _playerMove.prevNum = spacialNum;
                 }
                 Debug.Log(spacialNum);
             }
