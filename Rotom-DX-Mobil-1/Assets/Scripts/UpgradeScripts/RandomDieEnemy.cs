@@ -22,7 +22,7 @@ public class RandomDieEnemy : MonoBehaviour, IController
     }
     public void RastgeleDusmanSil()
     {
-        _upgradeData.ActiveUpgrade(_enemyScript.spacialNum);
+
 
         if (_enemyDector.dusmanlar.Count == 0)
             return;

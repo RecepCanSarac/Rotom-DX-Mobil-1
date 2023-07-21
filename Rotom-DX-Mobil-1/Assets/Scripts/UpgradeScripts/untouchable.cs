@@ -23,7 +23,7 @@ public class untouchable : MonoBehaviour,IController
 
     private void Untouchable()
     {
-        _upgradeData.ActiveUpgrade(_enemyScript.spacialNum);
+        
         _player.isTrigger = true;
         _playerMove.speed = 0;
     }

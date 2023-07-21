@@ -12,10 +12,12 @@ public class EnemyScripts : MonoBehaviour
     private int prevNum;
     private UpgradeData _upgradeData;
     private PlayerMove _playerMove;
+    private PlayerManager _playerManager;
     private void Awake()
     {
         _upgradeData = GameObject.FindGameObjectWithTag("Player").GetComponent<UpgradeData>();
         _playerMove = GameObject.FindGameObjectWithTag("Player").GetComponent <PlayerMove>();
+        _playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
     }
     void Start()
     {
@@ -31,9 +33,9 @@ public class EnemyScripts : MonoBehaviour
             {
                 if (prevNum == spacialNum)
                 {
-                    spacialNum = Random.Range(0, _upgradeData._upgradeScripts.Length);
-                    Instantiate(_upgradeData._upgradeScripts[spacialNum], transform.position, Quaternion.identity);
-                  
+                    spacialNum = Random.Range(0, _playerMove.playerDatas.Length);
+                    Instantiate(_playerMove.playerDatas[spacialNum].Upgardes, transform.position, Quaternion.identity);
+                    
                 }
                 else
                 {

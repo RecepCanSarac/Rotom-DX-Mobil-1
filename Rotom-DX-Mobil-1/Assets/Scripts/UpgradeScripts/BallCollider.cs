@@ -23,7 +23,7 @@ public class BallCollider : MonoBehaviour,IController
 
     private void ColliderBall()
     {
-        _upgradeData.ActiveUpgrade(_enemyScript.spacialNum);
+        
         _boxCollider.isTrigger = true;
     }
 }

@@ -20,7 +20,7 @@ public class ControlChange : MonoBehaviour,IController
 
     private void ChangeControl()
     {
-        _upgradeData.ActiveUpgrade(_enemyScript.spacialNum);
+        
         _playerMove.speed *= -1;
     }
 }

@@ -18,7 +18,7 @@ public class Ball_2X : MonoBehaviour,IController
     }
     private void Ball2X()
     {
-        _upgradeData.ActiveUpgrade(_enemyScripts.spacialNum);
+       
         Instantiate(ballPrefab, ball.position, Quaternion.identity);
        
     }

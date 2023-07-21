@@ -23,7 +23,7 @@ public class Health : MonoBehaviour,IController
 
     private void PlayerHealthPlus()
     {
-        _upgradeData.ActiveUpgrade(_enemyScript.spacialNum);
+       
         _playerMove.health = MaxHealth;
         Debug.Log("Can Arttý");
     }

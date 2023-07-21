@@ -16,8 +16,22 @@ public class PlayerMove : MonoBehaviour
     private GameObject _tranbolin;
     [SerializeField] private TextMeshProUGUI HealthText;
     [SerializeField] private GameObject TryAgainPanel;
+
+    private EnemyScripts _enemyScripts;
+    private PlayerManager _playerManager;
+    private SpriteRenderer playerSprite;
+
+    public PlayerData[] playerDatas = new PlayerData[10];
+
+    public void ChangeSprite()
+    {
+       
+    }
     void Start()
     {
+        playerSprite = GetComponent<SpriteRenderer>();
+        _enemyScripts = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyScripts>();
+        _playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
         health = 3;
         playerRB = GetComponent<Rigidbody2D>();
         ballRB = GameObject.FindGameObjectWithTag("Ball").GetComponent<Rigidbody2D>();
@@ -38,17 +52,11 @@ public class PlayerMove : MonoBehaviour
             Time.timeScale = 1.00f;
         }
     }
-    public void leftMove()
+  
+    public void FixedUpdate()
     {
-
-        playerRB.velocity = new Vector2(-speed * Time.deltaTime, playerRB.velocity.y);
-
-        float xPos = Mathf.Clamp(transform.position.x, -3f, 3f);
-        transform.position = new Vector2(xPos, transform.position.y);
-    }
-    public void rightMove()
-    {
-        playerRB.velocity = new Vector2(speed * Time.deltaTime, playerRB.velocity.y);
+        float horizontalMove = Input.GetAxisRaw("Horizontal");
+        playerRB.velocity = new Vector2(horizontalMove * speed * Time.deltaTime, playerRB.velocity.y);
 
         float xPos = Mathf.Clamp(transform.position.x, -3f, 3f);
         transform.position = new Vector2(xPos, transform.position.y);
@@ -62,8 +70,6 @@ public class PlayerMove : MonoBehaviour
             HealthText.text ="Healt:"+health.ToString();
             ballRB.velocity = new Vector2(ballRB.velocity.x, Force);
         }
-
-      
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -81,11 +87,11 @@ public class PlayerMove : MonoBehaviour
                 {
                     Destroy(_tranbolin);
                 }
+                playerSprite.sprite = playerDatas[_enemyScripts.spacialNum].spritePlayer;
                 PlayerUpgrade.PlayerUpgrade();
             }
         }
     }
-
     public void LevelScene()
     {
         SceneManager.LoadScene(1);

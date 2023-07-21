@@ -21,7 +21,7 @@ public class SlowTimeDown : MonoBehaviour,IController
 
     private void TimeSlow()
     {
-        _upgradeData.ActiveUpgrade(_enemyScript.spacialNum);
+       
 
         Time.timeScale = 0.5f;
         _playerMove.speed *= 2.0f;
