@@ -90,7 +90,7 @@ public class PlayerMove : MonoBehaviour
                 {
                     Destroy(_tranbolin);
                 }
-                playerSprite.sprite = playerDatas[_enemyScripts.spacialNum].spritePlayer;
+                playerSprite.sprite = playerDatas[prevNum].spritePlayer;
                 PlayerUpgrade.PlayerUpgrade();
             }
         }

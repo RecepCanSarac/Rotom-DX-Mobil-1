@@ -16,7 +16,7 @@ public class EnemyScripts : MonoBehaviour
     private void Awake()
     {
         _upgradeData = GameObject.FindGameObjectWithTag("Player").GetComponent<UpgradeData>();
-        _playerMove = GameObject.FindGameObjectWithTag("Player").GetComponent <PlayerMove>();
+        _playerMove = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMove>();
         _playerManager = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
     }
     void Start()
@@ -28,19 +28,15 @@ public class EnemyScripts : MonoBehaviour
     {
         if (health <= 0)
         {
-          
+
             if (Special)
             {
-                if (_playerMove.prevNum == spacialNum)
-                {
-                    spacialNum = Random.Range(0, _playerMove.playerDatas.Length);
-                    Instantiate(_playerMove.playerDatas[spacialNum].Upgardes, transform.position, Quaternion.identity);
-                    
-                }
-                else
-                {
-                    _playerMove.prevNum = spacialNum;
-                }
+
+                spacialNum = Random.Range(0, _playerMove.playerDatas.Length);
+                _playerMove.prevNum = spacialNum;
+                Instantiate(_playerMove.playerDatas[spacialNum].Upgardes, transform.position, Quaternion.identity);
+
+
                 Debug.Log(spacialNum);
             }
             OnDusmanOlum();
