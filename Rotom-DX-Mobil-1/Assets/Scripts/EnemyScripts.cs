@@ -13,6 +13,8 @@ public class EnemyScripts : MonoBehaviour
     private UpgradeData _upgradeData;
     private PlayerMove _playerMove;
     private PlayerManager _playerManager;
+
+    private int numberr;
     private void Awake()
     {
         _upgradeData = GameObject.FindGameObjectWithTag("Player").GetComponent<UpgradeData>();
@@ -31,12 +33,16 @@ public class EnemyScripts : MonoBehaviour
 
             if (Special)
             {
-
-                spacialNum = Random.Range(0, _playerMove.playerDatas.Length);
-                _playerMove.prevNum = spacialNum;
-                Instantiate(_playerMove.playerDatas[spacialNum].Upgardes, transform.position, Quaternion.identity);
-
-
+                if (numberr == spacialNum)
+                {
+                    spacialNum = Random.Range(0, _playerMove.playerDatas.Length);
+                    _playerMove.prevNum = spacialNum;
+                    Instantiate(_playerMove.playerDatas[spacialNum].Upgardes, transform.position, Quaternion.identity);
+                }
+                else
+                {
+                    numberr = spacialNum;
+                }
                 Debug.Log(spacialNum);
             }
             OnDusmanOlum();
