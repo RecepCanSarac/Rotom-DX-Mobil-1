@@ -58,13 +58,17 @@ public class PlayerMove : MonoBehaviour
   
     public void FixedUpdate()
     {
+        Move(speed);
+    }
+
+    public void Move(float speed)
+    {
         float horizontalMove = Input.GetAxisRaw("Horizontal");
         playerRB.velocity = new Vector2(horizontalMove * speed * Time.deltaTime, playerRB.velocity.y);
 
         float xPos = Mathf.Clamp(transform.position.x, -3f, 3f);
         transform.position = new Vector2(xPos, transform.position.y);
     }
-
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ball"))
